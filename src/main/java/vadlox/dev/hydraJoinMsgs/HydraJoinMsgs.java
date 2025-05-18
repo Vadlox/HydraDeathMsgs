@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import java.time.Year;
 import java.util.Collections;
 import java.util.List;
+import me.clip.placeholderapi.PlaceholderAPI;
 
 public class HydraJoinMsgs extends JavaPlugin implements Listener, TabCompleter {
     @Override
@@ -70,13 +71,21 @@ public class HydraJoinMsgs extends JavaPlugin implements Listener, TabCompleter 
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        String joinMessage = getConfig().getString("join-message", "&aWelcome, %player%! Enjoy your stay!").replace("%player%", event.getPlayer().getName());
+        Player player = event.getPlayer();
+        String joinMessage = getConfig().getString("join-message", "&aWelcome, %player%! Enjoy your stay!").replace("%player%", player.getName());
+        if (getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            joinMessage = PlaceholderAPI.setPlaceholders(player, joinMessage);
+        }
         event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
     }
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        String leaveMessage = getConfig().getString("leave-message", "&c%player% has left the server. Goodbye!").replace("%player%", event.getPlayer().getName());
+        Player player = event.getPlayer();
+        String leaveMessage = getConfig().getString("leave-message", "&c%player% has left the server. Goodbye!").replace("%player%", player.getName());
+        if (getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            leaveMessage = PlaceholderAPI.setPlaceholders(player, leaveMessage);
+        }
         event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', leaveMessage));
     }
 }

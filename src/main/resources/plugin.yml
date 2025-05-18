@@ -3,6 +3,8 @@ version: '1.0'
 main: vadlox.dev.hydraJoinMsgs.HydraJoinMsgs
 api-version: '1.21'
 description: The Ultimate Clans Plugin.
+depend:
+  - PlaceholderAPI
 websites:
   - https://vadlox.hydraquest.net
   - https://github.com/vadlox
@@ -17,3 +19,4 @@ permissions:
   hydrajoinmsgs.admin:
     description: Allows admins to reload the HydraJoinMsgs plugin.
     default: op
+
