@@ -1,0 +1,15 @@
+# HydraJoinMsgs Configuration
+
+join-message: "&aWelcome, %player%! Enjoy your stay!"
+leave-message: "&c%player% has left the server. Goodbye!"
+
+
+
+
+
+  ██╗  ██╗██████╗  
+  ██║  ██║██╔══██╗  HydraJoinMsgs (Plugin Succesfully Enabled)
+  ███████║██████╔╝  Copyright Vadlox %current year%
+  ██╔══██║██╔═══╝   Github: https://github.com/vadlox
+  ██║  ██║██║       Portfolio: https:vadlox.hydraquest.net
+  ╚═╝  ╚═╝╚═╝
