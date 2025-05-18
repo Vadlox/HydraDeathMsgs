@@ -8,3 +8,12 @@ websites:
   - https://github.com/vadlox
 authors:
   - Vadlox
+commands:
+  hydrajoinmsgs:
+    description: Reloads the HydraJoinMsgs plugin configuration.
+    usage: /<command> reload
+    permission: hydrajoinmsgs.admin
+permissions:
+  hydrajoinmsgs.admin:
+    description: Allows admins to reload the HydraJoinMsgs plugin.
+    default: op
